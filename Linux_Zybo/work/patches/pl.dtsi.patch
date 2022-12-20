@@ -1,0 +1,22 @@
+diff --git a/pl.dtsi b/pl.dtsi
+index eca89c8..4e129e9 100755
+--- a/pl.dtsi
++++ b/pl.dtsi
+@@ -15,7 +15,7 @@
+ 			/* This is a place holder node for a custom IP, user may need to update the entries */
+ 			clock-names = "s00_axi_aclk", "s_axi_intr_aclk";
+ 			clocks = <&clkc 15>, <&clkc 15>;
+-			compatible = "xlnx,custom-gpio-1.0";
++			compatible = "generic-uio";
+ 			reg = <0x43c00000 0x10000>;
+ 			xlnx,intr-active-state = <0xFFFFFFFF>;
+ 			xlnx,intr-sensitivity = <0xFFFFFFFF>;
+@@ -31,7 +31,7 @@
+ 			/* This is a place holder node for a custom IP, user may need to update the entries */
+ 			clock-names = "s00_axi_aclk", "s_axi_intr_aclk";
+ 			clocks = <&clkc 15>, <&clkc 15>;
+-			compatible = "xlnx,custom-gpio-1.0";
++			compatible = "generic-uio";
+ 			reg = <0x43c20000 0x10000>;
+ 			xlnx,intr-active-state = <0xFFFFFFFF>;
+ 			xlnx,intr-sensitivity = <0xFFFFFFFF>;

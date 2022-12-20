@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]work/fsbl/fsbl.elf
+	work/hw/design.bit
+	work/u-boot-Digilent-Dev/u-boot.elf 
+}

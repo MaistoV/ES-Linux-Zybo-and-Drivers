@@ -1,0 +1,6 @@
+1. the interrupt signal output by the custom IP must be marked as interrupt:
+    Vivado GUI: Package IP > Ports and Interfaces > <my port> > Right Click > Auto Infere Single Bit Interface > Interrupt
+    Vivado tcl: ipx::infer_bus_interface <my port> xilinx.com:signal:interrupt_rtl:1.0 [ipx::current_core]
+2. In the PL configuration, enable PL interrupts
+    Vivado GUI: Block Design > PL configuration > Interrupts > [Check] Fabric Interrupts > PL-PS Interrupt Ports > [Check] IRQ_F2P
+    

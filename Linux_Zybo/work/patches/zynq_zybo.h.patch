@@ -1,0 +1,14 @@
+diff --git a/include/configs/zynq_zybo.h b/include/configs/zynq_zybo.h
+index 1d3654303..9d4b03654 100644
+--- a/include/configs/zynq_zybo.h
++++ b/include/configs/zynq_zybo.h
+@@ -86,8 +85,7 @@
+ 			"echo Copying Linux from SD to RAM... && " \
+ 			"fatload mmc 0 0x3000000 ${kernel_image} && " \
+ 			"fatload mmc 0 0x2A00000 ${devicetree_image} && " \
+-			"fatload mmc 0 0x2000000 ${ramdisk_image} && " \
+-			"bootm 0x3000000 0x2000000 0x2A00000; " \
++			"bootm 0x3000000 - 0x2A00000; " \
+ 		"fi\0" \
+ 	"nandboot=echo Copying Linux from NAND flash to RAM... && " \
+ 		"nand read 0x3000000 0x100000 ${kernel_size} && " \

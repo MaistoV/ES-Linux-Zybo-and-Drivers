@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER custom_gpio
+	OPTION supported_peripherals = (custom_gpio);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = custom_gpio;
+END DRIVER

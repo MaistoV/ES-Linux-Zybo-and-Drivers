@@ -1,0 +1,13 @@
+diff --git a/custom_dt/system-top.dts b/custom_dt/system-top.dts
+index 9385723..951f4dc 100644
+--- a/custom_dt/system-top.dts
++++ b/custom_dt/system-top.dts
+@@ -11,7 +11,7 @@
+ #include "pcw.dtsi"
+ / {
+ 	chosen {
+-		bootargs = "earlycon";
++		bootargs = "console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait devtmpfs.mount=1 uio_pdrv_genirq.of_id=generic-uio";
+ 		stdout-path = "serial0:115200n8";
+ 	};
+ 	aliases {

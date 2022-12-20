@@ -1,3 +1,10 @@
+# Artifacts
+*gz
+*BIN
+*uboot
+SDcard
+Linux_Zybo/work/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabihf/
+
 # Prerequisites
 *.d
 
