@@ -2,9 +2,9 @@
 # if [ ! -e work/fsbl/fsbl.elf ];
 # then
 #     # Export Xilinx tools to PATH
-#     source work/scripts/settings/xilinx_settings.sh
+#     source scripts/settings/xilinx_settings.sh
 #     # Create and build 
-#     xsct work/scripts/tcl/generate_fsbl.tcl
+#     xsct scripts/tcl/generate_fsbl.tcl
 #     # 
 #     mkdir -p work/fsbl
 #     cp zynq_fsbl/Debug/zynq_fsbl.elf fsbl/fsbl.elf

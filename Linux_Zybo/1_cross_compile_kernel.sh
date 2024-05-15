@@ -1,5 +1,5 @@
 # Export cross-compiler
-source work/scripts/settings/cross_compilation_settings.sh
+source scripts/settings/cross_compilation_settings.sh
 
 # Build linux kernel
 make -C work/linux-digilent xilinx_zynq_defconfig

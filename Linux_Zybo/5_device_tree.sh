@@ -1,8 +1,8 @@
 # Export Xilinx tools to PATH
-source work/scripts/settings/xilinx_settings.sh
+source scripts/settings/xilinx_settings.sh
 
 # Device tree
-xsct work/scripts/tcl/generate_dt.tcl 
+xsct scripts/tcl/generate_dt.tcl 
 # Edit the compatible kernel module name
 patch work/custom_dt/pl.dtsi < work/patches/pl.dtsi.patch
 # Edit kernel bootargs
