@@ -1,1 +1,0 @@
-exec bootgen -image work/configs/BOOT.bif -arch zynq -w -o SDcard/BOOT/BOOT.BIN -log trace
