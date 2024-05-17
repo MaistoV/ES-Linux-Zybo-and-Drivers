@@ -9,7 +9,7 @@
 #include "custom_gpio_memory_map.h" 
 
 void print_help(char** argv){
-	printf("Wrong number of argumetns. Example of use:\n%s led value (write a value to led[3:0])\n%s sw (read value from sw[3:0]\n",argv[0],argv[0]);
+	printf("Wrong number of arguments. Example of use:\n%s led value (write a value to led[3:0])\n%s sw (read value from sw[3:0]\n",argv[0],argv[0]);
 }
 
 #define GPIO_OP_NONE  0
@@ -60,20 +60,29 @@ int main(int argc, char** argv) {
 	page_size = sysconf(_SC_PAGESIZE);	// Page size
 	page_mask = ~(page_size-1);			// Page mask
 	page_addr = gpio_phy_addr & page_mask;	// Physical page address
-	offset    = gpio_phy_addr - page_addr;	// Device offset from the physical page address
 
 	// Request a memory mapping
-	vrt_page_addr = mmap( 	NULL, 					// Destination address (NULL -> the kernel can choose)
-							page_size, 				// Page Size
-							PROT_READ | PROT_WRITE, // Read/Write permission
-							MAP_SHARED, 			// Share this mapping with other processes -> Propagate the read/write operations
-							dev_mem_fd, 			// /dev/mem file descriptor
-							page_addr );			// Virtual page address
+	vrt_page_addr = mmap (	// Destination address 
+							// (NULL -> let the kernel choose)
+							NULL,
+							// Page Size	
+							page_size,
+							// Read/Write permission
+							PROT_READ | PROT_WRITE,
+							// Share this mapping with other processes 
+							//		-> Propagate the read/write operations
+							MAP_SHARED,
+							// /dev/mem file descriptor
+							dev_mem_fd,
+							// Physical page address 			
+							page_addr 
+						);			
 	// Check for errors
 	if ( vrt_page_addr == MAP_FAILED ) {
 		printf("mmap FAILED!\n");
 		return -1;
 	}
+	offset    = gpio_phy_addr - page_addr;	// Device offset from the physical page address
 	printf("Virtual page address is 						0x%0x	\n", vrt_page_addr);
 	gpio_virt_addr = vrt_page_addr + offset;	// indirizzo virtuale del device gpio
 	printf("Virtual GPIO base address is 		 			0x%0x	\n", gpio_virt_addr);
@@ -84,8 +93,7 @@ int main(int argc, char** argv) {
 
 	custom_gpio_mode_reg = gpio_virt_addr + CUSTOM_GPIO_MODE_REG_OFFSET;
 	custom_gpio_data_reg = gpio_virt_addr + CUSTOM_GPIO_DATA_REG_OFFSET;
-	switch ( gpio_op )
-	{
+	switch ( gpio_op ) {
 	case GPIO_OP_READ:
 		// Enable read mode for all pins
 		*custom_gpio_mode_reg = CUSTOM_GPIO_MODE_READ;

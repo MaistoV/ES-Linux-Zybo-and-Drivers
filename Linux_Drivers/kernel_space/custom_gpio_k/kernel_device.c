@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 		break;
 	}
 
-    // Open the memory device as a file 
+    // Open the GPIO device as a file 
 	fd = open (dev_filename, flags);
 	if ( fd < 1 ) {
 		printf("Impossible to open %s\n", dev_filename);

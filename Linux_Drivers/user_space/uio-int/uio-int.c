@@ -67,12 +67,19 @@ int main(int argc, char** argv) {
 
 	// Request a memory mapping
 	page_size = sysconf(_SC_PAGESIZE);		// Page Size
-	gpio_virt_addr = mmap( 	NULL, 					// Destination address (NULL -> the kernel can choose)
-							page_size, 				// Page Size
-							PROT_READ | PROT_WRITE, // Read/Write permission
-							MAP_SHARED, 			// Share this mapping with other processes -> Propagate the read/write operations
-							uio_fd, 			    // /dev/uioX file descriptor
-							0 );					// Virtual page address
+	gpio_virt_addr = mmap( 	// Destination address
+							NULL,				
+							// Page Size
+							page_size,
+							// Read/Write permission
+							PROT_READ | PROT_WRITE,
+							// Share this mapping with other processes 
+							//		-> Propagate the read/write operations
+							MAP_SHARED,
+							// /dev/uioX file descriptor	
+							uio_fd,
+							// No physical address necessary
+							0 );	
 	// Check for errors
 	if ( gpio_virt_addr == MAP_FAILED ) {
 		printf("mmap FAILED!\n");

@@ -78,7 +78,8 @@ static struct file_operations custom_gpio_fops = {
 	.write = custom_gpio_write,
 	.poll = custom_gpio_poll,
 	.open = custom_gpio_open,
-	.release = custom_gpio_release};
+	.release = custom_gpio_release
+};
 
 /* Gloabal pointer ot file descriptor */
 custom_gpio_t *custom_gpio_ptr_global_sw = NULL;
@@ -176,7 +177,6 @@ static int custom_gpio_remove(struct platform_device *plat_dev_local)
 	else {
 		custom_gpio_ptr = custom_gpio_ptr_global_unknown;
 	}
-	// custom_gpio_ptr = container_of((struct platform_device * const*)plat_dev_local, custom_gpio_t, plat_dev);
 
 	// Clean-up
 	if (custom_gpio_ptr != NULL){

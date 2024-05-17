@@ -3,14 +3,11 @@
 MODULE_LICENSE("GPL");
 
 static int hello_init(void){
-
 	printk(KERN_ALERT "Hello from kernel-space\n");
-
 	return 0;
 }
 
 static void hello_exit(void){
-
 	printk(KERN_ALERT "Bye-bye from kernel-space\n");
 }
 
