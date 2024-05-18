@@ -1,0 +1,13 @@
+# Artifacts
+*gz
+*BIN
+*uboot
+SDcard/BOOT/*
+SDcard/rootfs/rootfs.tar
+
+# Whatever under work
+work/*
+
+# Xilinx artifacts
+*.Xil
+bootgen_log.txt

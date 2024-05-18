@@ -1,0 +1,5 @@
+exported_binaries/
+kernel_space/custom_gpio_k/kernel_device
+user_space/no_driver/no_driver
+user_space/uio-int/uio-int
+user_space/uio/uio
