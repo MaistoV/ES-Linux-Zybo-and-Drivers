@@ -2,7 +2,7 @@
 Course material for Embedded Systems Laboratory on embedded Linux.
 
 Verified environment (May 2024):
-* Zynq Zybo-700 (the board lost support and repos do not explicitly support it anymore)
+* Zynq Zybo-7000 (the board lost support and repos do not explicitly support it anymore)
 * Ubuntu 18.04 for software builds
 * Vivado 2021.2 for hardware design
 * Xilinx SDK 2019.1
